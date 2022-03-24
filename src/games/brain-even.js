@@ -4,6 +4,7 @@ import readlineSync from 'readline-sync';
 
 let userName = '';
 function sayHello() {
+  console.log('Welcome to the Brain Games!');
   userName = readlineSync.question('May I have your name?');
   console.log(`Hello, ${userName}!`);
 }
@@ -21,7 +22,6 @@ function answered() {
   return false;
 }
 function startGame() {
-  console.log('Welcome to the Brain Games!');
   sayHello();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   let count = 0;
