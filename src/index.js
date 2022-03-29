@@ -1,4 +1,6 @@
-function 
+import sayHello from '../src/cli.js';
+
+function gamesStart(rules, ) {
 console.log(`Question: ${randomNumber}`);
 const userAnswer = readlineSync.question('Your answer:');
 if (userAnswer === correctAnswer) {
