@@ -4,6 +4,7 @@ function getRandomOperator() {
   return selectoperators[rand];
 }
 
+const getRandomNumberToTen = () => Math.floor(1 + Math.random() * (10 - 1));
 const getRandomNumber = () => Math.floor(1 + Math.random() * (51 - 1));
 
-export { getRandomNumber, getRandomOperator };
+export { getRandomNumberToTen, getRandomOperator, getRandomNumber };
