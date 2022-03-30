@@ -6,4 +6,5 @@
 [![brain-game](https://asciinema.org/a/21Rpk2p34S3VqGktKu3YvTh1k)]
 https://asciinema.org/a/2WKOWzWp2SaCJTc6inpN2jkC9
 https://asciinema.org/a/wLRTpD4svNKuPDB84mTra9DYE
-
+[![Brain-calc](https://asciinema.org/a/2WKOWzWp2SaCJTc6inpN2jkC9)]
+[![brain-prime]https://asciinema.org/a/yYOhiX6jmq1lR7EbOedMwXtKX]
