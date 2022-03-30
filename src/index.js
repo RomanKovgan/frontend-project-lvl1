@@ -1,12 +1,16 @@
-import sayHello from '../src/cli.js';
+import readlineSync from 'readline-sync';
 
-function gamesStart(rules, ) {
-console.log(`Question: ${randomNumber}`);
-const userAnswer = readlineSync.question('Your answer:');
-if (userAnswer === correctAnswer) {
-  console.log('Correct!');
-  return true;
-}
-console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${userName}!`);
-return false;
+export default function gamesStart(rules, logics) {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name?');
+  console.log(`Hello, ${name}!`);
+  console.log(rules);
+  for (let i = 1; i <= 3; i += 1) {
+    const isRight = logics();
+    if (!isRight) {
+      console.log(`Let's try again, ${name}!`);
+      return;
+    }
+  }
+  console.log(`Congratulations, ${name}!`);
 }
