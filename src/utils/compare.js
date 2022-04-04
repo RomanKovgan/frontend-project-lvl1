@@ -1,6 +1,5 @@
 export default function compare(userAnswer, correctAnswer) {
-  // eslint-disable-next-line eqeqeq
-  if (userAnswer == correctAnswer) {
+  if (String(userAnswer) === String(correctAnswer)) {
     console.log('Correct!');
     return true;
   }
