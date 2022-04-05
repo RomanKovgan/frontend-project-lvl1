@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import compare from './utils/compare.js';
 
 export default function gameStart(game, rule) {
   console.log('Welcome to the Brain Games!');
@@ -10,11 +9,13 @@ export default function gameStart(game, rule) {
     const resultPerStep = game();
     console.log(`Question: ${resultPerStep.question}`);
     const userAnswer = readlineSync.question('Your answer:');
-    const correct = compare(userAnswer, resultPerStep.correctAnswer);
-    if (!correct) {
+    if (String(userAnswer) === String(resultPerStep.correctAnswer)) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${resultPerStep.correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
+    console.log(`Congratulations, ${name}!`);
   }
-  console.log(`Congratulations, ${name}!`);
 }
