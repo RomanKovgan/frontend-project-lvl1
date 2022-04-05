@@ -2,7 +2,7 @@ import getRandomNumber from '../utils/random.js';
 
 const minForAll = 0;
 const maxForOperator = 3;
-const maxForNumber = 100;
+const maxForNumber = 30;
 function getRandomOperator(min, max) {
   const rand = Math.floor(min + Math.random() * (max - min));
   const selectoperators = '*+-';
