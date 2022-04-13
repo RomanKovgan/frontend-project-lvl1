@@ -7,6 +7,7 @@ const maxNumber = 100;
 function gcd() {
   const firstNumber = getRandomNumber(minNumber, maxNumber);
   const secondNumber = getRandomNumber(minNumber, maxNumber);
+
   let x = firstNumber;
   let y = secondNumber;
   while (y) {
@@ -14,6 +15,7 @@ function gcd() {
     y = x % y;
     x = t;
   }
+
   const correctAnswer = x;
   const question = `${firstNumber} ${secondNumber}`;
   return { question, correctAnswer };
