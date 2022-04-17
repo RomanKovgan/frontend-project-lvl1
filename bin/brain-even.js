@@ -2,4 +2,4 @@
 
 import evenNumber from '../../src/games/even.js';
 
-evenNumber();
+gameStart(evenNumber, rule);
