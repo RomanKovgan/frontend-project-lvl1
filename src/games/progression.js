@@ -1,29 +1,30 @@
 import getRandomNumber from '../utils/random.js';
+import gameStart from '../index.js';
 
-const rule = 'What number is missing in the progression?';
-const minNumber = 0;
-const maxNumber = 100;
-const ARRAY_SIZE = 10;
+const RULE = 'What number is missing in the progression?';
 
-function progression() {
-  const firstNumber = getRandomNumber(minNumber, maxNumber);
-  const differenceProgression = getRandomNumber(minNumber, maxNumber);
-  const maxIndex = ARRAY_SIZE - 1;
-  const index = getRandomNumber(minNumber, maxIndex);
-  const randomNumbers = [firstNumber];
-
-  let i = 0;
-  while (randomNumbers.length < ARRAY_SIZE) {
-    randomNumbers.push(randomNumbers[i] + differenceProgression);
-    i += 1;
+const getProgression = (firstNumber, commonDiffirence) => {
+  const ARRAY_SIZE = 10;
+  const arrayOfProgression = [firstNumber];
+  for (let i = 1; i < ARRAY_SIZE; i += 1) {
+    arrayOfProgression.push(firstNumber + commonDiffirence * i);
   }
+  return arrayOfProgression;
+};
 
-  const correctAnswer = randomNumbers[index];
-  const randomNumbersUser = randomNumbers;
+const getAnswerAndQwestion = () => {
+  const firstNumber = getRandomNumber();
+  const commonDiffirence = getRandomNumber(20);
+  const index = getRandomNumber(9);
+  const arrayOfProgression = getProgression(firstNumber, commonDiffirence);
+  const answer = String(arrayOfProgression[index]);
+  const randomNumbersUser = arrayOfProgression;
   randomNumbersUser[index] = '..';
   const question = randomNumbersUser.join(' ');
 
-  return { question, correctAnswer };
-}
+  return { question, answer };
+};
 
-export { rule, progression };
+const brainProgression = () => gameStart(getAnswerAndQwestion, RULE);
+
+export default brainProgression;

@@ -1,24 +1,28 @@
 import getRandomNumber from '../utils/random.js';
+import gameStart from '../index.js';
 
-const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const minNumber = 0;
-const maxNumber = 100;
+const RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function primeNumber() {
-  let correctAnswer = 'yes';
-  const number = getRandomNumber(minNumber, maxNumber);
-  if (number < 2) {
-    correctAnswer = 'no';
+const isPrime = (num) => {
+  if (num < 2) {
+    return false;
   }
-  
-  for (let i = 2; i <= Math.sqrt(number); i += 1) {
-    if (number % i === 0) {
-      correctAnswer = 'no';
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
+    if (num % i === 0) {
+      return false;
     }
   }
-  const question = `${number}`;
+  return true;
+};
 
-  return { question, correctAnswer };
+function getAnswerAndQwestion() {
+  const number = getRandomNumber();
+  const question = `${number}`;
+  const answer = isPrime(number) ? 'yes' : 'no';
+
+  return { question, answer };
 }
 
-export { rule, primeNumber };
+const brainPrime = () => gameStart(getAnswerAndQwestion, RULE);
+
+export default brainPrime;

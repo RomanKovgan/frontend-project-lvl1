@@ -23,7 +23,7 @@ const getAnswerAndQwestion = () => {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
 
-  const answer = calculate(firstNumber, secondNumber, operator);
+  const answer = String(calculate(firstNumber, secondNumber, operator));
   const question = `${firstNumber} ${operator} ${secondNumber}`;
   return { question, answer };
 };
