@@ -23,6 +23,4 @@ function getAnswerAndQwestion() {
   return { question, answer };
 }
 
-const brainPrime = () => gameStart(getAnswerAndQwestion, RULE);
-
-export default brainPrime;
+export default () => gameStart(getAnswerAndQwestion, RULE);

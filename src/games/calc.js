@@ -28,6 +28,4 @@ const getAnswerAndQwestion = () => {
   return { question, answer };
 };
 
-const braincalc = () => gameStart(getAnswerAndQwestion, RULE);
-
-export default braincalc;
+export default () => gameStart(getAnswerAndQwestion, RULE);

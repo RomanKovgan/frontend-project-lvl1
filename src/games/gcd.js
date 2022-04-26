@@ -13,6 +13,4 @@ const getAnswerAndQwestion = () => {
   return { question, answer };
 };
 
-const gcdOfTwoNumbers = () => gameStart(getAnswerAndQwestion, RULE);
-
-export default gcdOfTwoNumbers;
+export default () => gameStart(getAnswerAndQwestion, RULE);

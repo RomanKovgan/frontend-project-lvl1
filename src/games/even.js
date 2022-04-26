@@ -12,6 +12,4 @@ const getAnswerAndQwestion = () => {
   return { question, answer };
 };
 
-const evenNumber = () => gameStart(getAnswerAndQwestion, RULE);
-
-export default evenNumber;
+export default () => gameStart(getAnswerAndQwestion, RULE);
